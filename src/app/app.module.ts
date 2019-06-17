@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 // 1. Import the libs you need
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-// import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
@@ -55,9 +56,10 @@ import { LoginComponent } from './login/login.component';
       ]),
     // 3. Initialize
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AngularFireDatabaseModule, // database
     AngularFireAuthModule, // auth
-    // AngularFireStorageModule // storage
+    AngularFireStorageModule // storage
   ],
   providers: [],
   bootstrap: [AppComponent]
