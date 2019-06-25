@@ -10,11 +10,12 @@ import { ProductService } from 'src/app/product.service';
 export class ProductFormComponent implements OnInit {
   categories$;
   constructor(categoryService: CategoryService, private productService: ProductService) {
-    this.categories$ = categoryService.getCategories().valueChanges();
+    this.categories$ = categoryService.getCategories().snapshotChanges();
   }
 
   save(product) {
     this.productService.create(product);
+    console.log(product);
   }
 
   ngOnInit() {
