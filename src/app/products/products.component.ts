@@ -12,8 +12,6 @@ products$;
 categories$;
   constructor(productService: ProductService, categoryService: CategoryService) {
     this.products$ = productService.getAll();
-    this.categories$ = categoryService.getAll().snapshotChanges();
+    this.categories$ = categoryService.getAll();
   }
-
-
 }
